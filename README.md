@@ -17,3 +17,6 @@ The settings file is a JSON file with the following structure:
 ```
 
 update the values to match your pCloud account and the folder you want to upload the file to.
+
+## Official pCloud Documentation:
+pCloud API documentation: https://docs.pcloud.com/methods/
