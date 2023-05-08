@@ -23,12 +23,12 @@ namespace PCloudUploader
 
             AuthResult userInfo = await client.GetUserInfoAsync(username, password);
 
-            if (userInfo.result != 0)
+            if (userInfo.Result != 0)
             {
                 throw new Exception("Could not authenticate.");
             }
 
-            string token = userInfo.auth;
+            string token = userInfo.Auth;
 
             return new PCloudClient(client, token);
         }
@@ -43,7 +43,7 @@ namespace PCloudUploader
         {
             MultipartFormDataContent content = GetFileDataContent(filePath);
             UploadResult uploadResult = await _client.UploadFileAsync(_authToken, toFolderId, content).ConfigureAwait(false);
-            long uploadedFileId = uploadResult.fileids[0];
+            long uploadedFileId = uploadResult.FileIds[0];
             return uploadedFileId;
         }
 
@@ -78,7 +78,7 @@ namespace PCloudUploader
         public async Task<FolderItem[]> ListFoldersAsync()
         {
             ListFolderResult listResult = await _client.ListFoldersAsync(_authToken, "0").ConfigureAwait(false);
-            FolderItem[] results = listResult.metadata.contents.Select(x => new FolderItem(x.id, x.name, x.path, x.isfolder, x.folderid)).ToArray();
+            FolderItem[] results = listResult.Meta.Contents.Select(x => new FolderItem(x.Id, x.Name, x.Path, x.IsFolder, x.FolderId)).ToArray();
             return results;
         }
     }

@@ -1,55 +1,129 @@
 ﻿using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace PCloudUploader
 {
     public class ListFolderResult
     {
-        public int result { get; set; }
-        public Metadata metadata { get; set; }
+        [JsonPropertyName("result")]
+        public int Result { get; set; }
+
+        [JsonPropertyName("metadata")]
+        public Metadata Meta { get; set; }
 
         public class Metadata
         {
-            public string path { get; set; }
-            public string name { get; set; }
-            public string created { get; set; }
-            public bool ismine { get; set; }
-            public bool thumb { get; set; }
-            public string modified { get; set; }
-            public string id { get; set; }
-            public bool isshared { get; set; }
-            public string icon { get; set; }
-            public bool isfolder { get; set; }
-            public int folderid { get; set; }
-            public Content[] contents { get; set; }
+            [JsonPropertyName("path")]
+            public string Path { get; set; }
+
+            [JsonPropertyName("name")]
+            public string Name { get; set; }
+
+            [JsonPropertyName("created")]
+            public string Created { get; set; }
+
+            [JsonPropertyName("ismine")]
+            public bool IsMine { get; set; }
+
+            [JsonPropertyName("thumb")]
+            public bool Thumb { get; set; }
+
+            [JsonPropertyName("modified")]
+            public string Modified { get; set; }
+
+            [JsonPropertyName("id")]
+            public string Id { get; set; }
+
+            [JsonPropertyName("isshared")]
+            public bool IsShared { get; set; }
+
+            [JsonPropertyName("icon")]
+            public string Icon { get; set; }
+
+            [JsonPropertyName("isfolder")]
+            public bool IsFolder { get; set; }
+
+            [JsonPropertyName("folderid")]
+            public int FolderId { get; set; }
+
+            [JsonPropertyName("contents")]
+            public Content[] Contents { get; set; }
         }
 
-        [DebuggerDisplay("{name}")]
+        [DebuggerDisplay("{Name}")]
         public class Content
         {
-            public string path { get; set; }
-            public string name { get; set; }
-            public string created { get; set; }
-            public bool ismine { get; set; }
-            public bool thumb { get; set; }
-            public string modified { get; set; }
-            public int comments { get; set; }
-            public string id { get; set; }
-            public bool isshared { get; set; }
-            public string icon { get; set; }
-            public bool isfolder { get; set; }
-            public int parentfolderid { get; set; }
-            public long folderid { get; set; }
-            public bool cancreate { get; set; }
-            public bool canread { get; set; }
-            public int userid { get; set; }
-            public bool ismount { get; set; }
-            public bool candelete { get; set; }
-            public bool canmodify { get; set; }
-            public long fileid { get; set; }
-            public long hash { get; set; }
-            public int category { get; set; }
-            public int size { get; set; }
-            public string contenttype { get; set; }
+            [JsonPropertyName("path")]
+            public string Path { get; set; }
+
+            [JsonPropertyName("name")]
+            public string Name { get; set; }
+
+            [JsonPropertyName("created")]
+            public string Created { get; set; }
+
+            [JsonPropertyName("ismine")]
+            public bool IsMine { get; set; }
+
+            [JsonPropertyName("thumb")]
+            public bool Thumb { get; set; }
+
+            [JsonPropertyName("modified")]
+            public string Modified { get; set; }
+
+            [JsonPropertyName("comments")]
+            public int Comments { get; set; }
+
+            [JsonPropertyName("id")]
+            public string Id { get; set; }
+
+            [JsonPropertyName("isshared")]
+            public bool IsShared { get; set; }
+
+            [JsonPropertyName("icon")]
+            public string Icon { get; set; }
+
+            [JsonPropertyName("isfolder")]
+            public bool IsFolder { get; set; }
+
+            [JsonPropertyName("parentfolderid")]
+            public int ParentFolderId { get; set; }
+
+            [JsonPropertyName("folderid")]
+            public long FolderId { get; set; }
+
+            [JsonPropertyName("cancreate")]
+            public bool CanCreate { get; set; }
+
+            [JsonPropertyName("canread")]
+            public bool CanRead { get; set; }
+
+            [JsonPropertyName("userid")]
+            public int UserId { get; set; }
+
+            [JsonPropertyName("ismount")]
+            public bool IsMount { get; set; }
+
+            [JsonPropertyName("candelete")]
+            public bool CanDelete { get; set; }
+
+            [JsonPropertyName("canmodify")]
+            public bool CanModify { get; set; }
+
+            [JsonPropertyName("fileid")]
+            public long FileId { get; set; }
+
+            [JsonPropertyName("hash")]
+            public long Hash { get; set; }
+
+            [JsonPropertyName("category")]
+            public int Category { get; set; }
+
+            [JsonPropertyName("size")]
+            public int Size { get; set; }
+
+            [JsonPropertyName("contenttype")]
+            public string ContentType { get; set; }
         }
     }
 }
