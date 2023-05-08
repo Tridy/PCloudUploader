@@ -1,0 +1,8 @@
+{
+    "Test": {
+        "User": "YOUR_PCLOUD_USERNAME",
+        "Password": "YOUR_PCLOUD_PASSWORD",
+        "PCloudFolder": "PublicPictures",
+        "LocalFileToUpload": ".\\TestFiles\\mytestfile.txt"
+    }
+}
